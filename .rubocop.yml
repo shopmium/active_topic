@@ -1,0 +1,7 @@
+AllCops:
+  TargetRubyVersion: 2.4
+Style/Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'
