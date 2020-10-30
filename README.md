@@ -99,27 +99,6 @@ end
 ### Using ActiveTopic
 
 The classes that inherits with ActiveTopic::Base are provided with a bunch of methods.
-
-To check for the existence of the topic on GoogleCloud, you have the following method:
-
-```ruby
-topic_created?
-```
-
-This method will return true if the topic already exists or will return false if it does not.
-
-To create the topic:
-
-```ruby
-create_topic!
-```
-
-The name of the created topic will be the name of the class in snake_case without the topic suffix (for instance, for a class named `MyFirstOneTopic`, the topic created will be `my_first_one`)
-This method will return true if the topic is created with success.
-If you try the create a topic that already exists, this method will raise an ```ActiveTopic::Exceptions:TopicAlreadyExists``` exception.
-
-### Using the classes inheriting from ActiveTopic::Base
-
 To use ActiveTopic you need to use an instance of a class that inherits from ActiveTopic::Base.
 
 example:
@@ -127,6 +106,24 @@ example:
 ```ruby
 active_topic = MyFirstOneTopic.new
 ```
+
+To check for the existence of the topic on GoogleCloud, you have the following method:
+
+```ruby
+active_topic.topic_created?
+```
+
+This method will return true if the topic already exists or will return false if it does not.
+
+To create the topic:
+
+```ruby
+active_topic.create_topic!
+```
+
+The name of the created topic will be the name of the class in snake_case without the topic suffix (for instance, for a class named `MyFirstOneTopic`, the topic created will be `my_first_one`)
+This method will return true if the topic is created with success.
+If you try the create a topic that already exists, this method will raise an ```ActiveTopic::Exceptions:TopicAlreadyExists``` exception.
 
 #### Creating a new subscription:
 
